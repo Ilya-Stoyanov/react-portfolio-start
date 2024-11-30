@@ -1,0 +1,231 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+  /*=======Main theme colors=======*/
+  --first-color: #0e2431;
+  --second-color: #6a59d1;
+  --third-color: #777;
+
+  /*=======Hover colors=======*/
+  --hover-color: #614fd0;
+
+  /*=======Background colors=======*/
+  --body-bg-color: #fefefe;
+  --card-bg-color: #fff;
+  --modal-bg-color: #fff;
+  --bg-transparent-color: rgba(0, 0, 0, 0.1);
+  --bg-transparent-color-01: rgba(0, 0, 0, 0.1);
+  --bg-transparent-color-02: rgba(106, 89, 209, 0.1);
+  --liner-color: #d7d7d7;
+
+  /*=======Color Filter=======*/
+  --color-filter: invert(1);
+
+  /*=======Box shadow=======*/
+  --box-shadow: 0px 0px 20px rgb(0 0 0 / 10%);
+
+  /*=======Font size=======*/
+  --small-font-size: 14px;
+  --normal-font-size: 16px;
+
+  /*=======Scroll bar colors=======*/
+  --scroll-bar-color: #c5cadf;
+  --scroll-thumb-color: #70768a;
+  --scroll-thumb-hover-color: #454f6b;
+}
+
+.dark-theme {
+  /*=======Main theme colors=======*/
+  --first-color: #fff;
+  --second-color: #6a59d1;
+  --third-color: #a9afc3;
+
+  /*=======Background colors=======*/
+  --body-bg-color: #0e1b31;
+  --card-bg-color: #132347;
+  --modal-bg-color: #102048;
+  --bg-transparent-color: rgba(255, 255, 255, 0.1);
+  --bg-transparent-color-01: rgba(255, 255, 255, 0.1);
+  --liner-color: #454f6b;
+
+  /*=======Color Filter=======*/
+  --color-filter: invert(0);
+
+  /*=======Scroll bar colors=======*/
+  --scroll-bar-color: #c1ceff;
+  --scroll-thumb-color: #282f4e;
+  --scroll-thumb-hover-color: #454f6b;
+}
+
+.dark-theme .nav-menu-btn {
+  background: url(../img/burger-white.svg) no-repeat center;
+}
+
+.dark-theme .nav-menu-btn.close {
+  background: url(../img/close-white.svg) no-repeat center;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  background: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+html {
+  font-family: "Poppins", sans-serif;
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  font-size: 16px;
+  max-width: 100%;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+body {
+  min-height: 100vh;
+  color: var(--first-color);
+  background: var(--body-bg-color);
+  overflow-x: hidden;
+}
+
+#root{
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  max-width: 100%;
+}
+
+.container {
+  max-width: 1250px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* Scroll to top button  */
+.scrollToTop {
+  position: fixed;
+  right: 0px;
+  bottom: 20px;
+  width: 45px;
+  height: 45px;
+  background: var(--second-color);
+  color: #fff;
+  font-size: var(--small-font-size);
+  border-radius: 3px;
+  cursor: pointer;
+  z-index: -1;
+  box-shadow: var(--box-shadow);
+  opacity: 0;
+  visibility: hidden;
+  transition: .3s linear;
+}
+
+.scrollToTop.flex-center {
+  justify-content: center;
+}
+
+.scrollToTop.active {
+  z-index: 10;
+  opacity: 1;
+  visibility: visible;
+  right: 20px;
+}
+
+/* ======= theme button Light/Dark ======= */
+.them-btn {
+  position: fixed;
+  z-index: 11;
+  right: 0;
+  top: 150px;
+  background: var(--bg-transparent-color-01);
+  backdrop-filter: blur(20px);
+  width: 50px;
+  height: 50px;
+  font-size: 20px;
+  border-radius: 5px 0 0 5px;
+  box-shadow: var(--box-shadow);
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.them-btn .fa-sun,
+.them-btn.sun .fa-moon {
+  display: none;
+}
+
+.them-btn.sun .fa-sun {
+  display: block;
+}
+
+/*=======Scroll bar=======*/
+::-webkit-scrollbar{
+  width: 10px;
+  background: var(--scroll-bar-color);
+}
+
+::-webkit-scrollbar-thumb{
+  background: var(--scroll-thumb-color);
+}
+
+::-webkit-scrollbar-thumb:hover{
+  border-radius: 20px;
+  background: var(--scroll-thumb-hover-color);
+}
+
+main {
+  flex: 1;
+}
+
+/* ======= Styles for all sections======= */
+
+.section {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+  padding: 60px 0 20px;
+}
+
+.flex-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.inner-info-link {
+  background: var(--second-color);
+  color: #fff;
+  font-size: var(--normal-font-size);
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  margin-top: 25px;
+  padding: 20px 30px;
+  letter-spacing: 1px;
+  border-radius: 10px;  
+}
